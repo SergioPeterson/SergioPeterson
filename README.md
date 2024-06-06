@@ -51,8 +51,6 @@
   <li><a href="https://medium.com/@regondaakhil1509/the-ultimate-checklist-for-starting-a-react-project-best-practices-and-tips-b73337b9b173"><i>The Ultimate Checklist for Starting a React Project: Best Practices and Tips</i></a></li>
 </ul>
 
-<p>If you think I deserve a little pick-me-up, why not treat me to a cup of coffee/tea?</p>
-<a href="https://www.buymeacoffee.com/SergioPeterson" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" width="150" ></a>
 
 ![result (1)](https://github.com/SergioPeterson/SergioPeterson/assets/71860669/a68db9c3-5816-4c6a-a354-7f77ad5ca0a7)
 
