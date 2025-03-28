@@ -1,6 +1,6 @@
 ## Hi there 👋
 
-### Im Sergio W. Peterson a senior in CS/DS intrested in ML and CV
+### Im Sergio W. Peterson a recent UC Berkeley Grad in CS/DS intrested in ML and CV
  
 <h3>Experience</h3>
 <p>
@@ -44,7 +44,7 @@
 [![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=SergioPeterson&theme=dark&ring=fb4362&file=fb4362&currStreakNum=fb4362&currStreakLabel=fb4362&hide_border=true)](https://git.io/streak-stats)
 
 
-<h3>My most recently read papers</h3>
+<h3>My most fav read papers</h3>
 <ul>
   <li><a href="https://arxiv.org/abs/1706.03762"><i>Attention Is All You Need</i></a></li>
   <li><a href="https://arxiv.org/abs/2003.08934"><i>NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis</i></a></li>
