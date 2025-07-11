@@ -12,7 +12,7 @@
 ### 🚀 Featured Project
 
 **Scholaria** — A React Native & Expo app I built to help you read, bookmark, and stay up-to-date with the latest research ideas.  
-[![Scholaria Demo](https://github.com/SergioPeterson/SergioPeterson/assets/71860669/a68db9c3-5816-4c6a-a354-7f77ad5ca0a7)](https://github.com/SergioPeterson/scholaria-mobile)
+[![Scholaria Demo](https://github.com/Scholaria)](https://github.com/Scholaria)
 
 ---
 
