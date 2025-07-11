@@ -11,7 +11,7 @@
 
 ### 🚀 Featured Project
 
-**Scholaria** — A React Native & Expo app I built to help you read, bookmark, and stay up-to-date with the latest research ideas. Now available on iOS devices via Expo Go.  
+**Scholaria** — A React Native & Expo app I built to help you read, bookmark, and stay up-to-date with the latest research ideas available on iOS devices.  
 [![GitHub Org: Scholaria](https://img.shields.io/badge/GitHub-Scholaria-black?style=flat-square&logo=github)](https://github.com/Scholaria)
 ---
 
