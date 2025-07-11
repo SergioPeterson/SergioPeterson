@@ -46,15 +46,6 @@
 [![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=SergioPeterson&theme=dark&hide_border=true)](https://github.com/SergioPeterson)  
 ---
 
-### 🎧 Currently Listening & Connect
-
-<a href="https://www.linkedin.com/in/SergioPeterson/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>  
-<a href="https://www.instagram.com/sergiopeterson/" target="_blank"><img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=flat-square&logo=instagram&logoColor=white" alt="Instagram"></a>  
-<a href="https://dev.to/SergioPeterson" target="_blank"><img src="https://img.shields.io/badge/DEV.to-%230A0A0A.svg?style=flat-square&logo=dev.to&logoColor=white" alt="DEV.to"></a>  
-[![Medium](https://github-readme-medium.vercel.app/?username=SergioPeterson)](https://medium.com/@SergioPeterson)
-
----
-
 ### 🤝 Let’s Collaborate
 
 - **Open to:** ML/CV research, autonomous systems, dashboards & MLOps  
