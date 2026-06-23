@@ -1,8 +1,8 @@
 ## Sergio W. Peterson
 
-ML engineer in San Francisco, moving into robot learning.
+ML engineer in San Francisco, currently a Founding Engineer at Mars Accounting / Minerva Intelligence and building a robot-learning portfolio in parallel.
 
-I am building toward robotics ML / research-engineering roles: vision policies, imitation learning, RL refinement, viewpoint robustness, VLM trajectory evaluation, and sim-to-real sanity checks.
+I am building toward robotics ML / research-engineering roles while still working at Minerva: vision policies, imitation learning, RL refinement, viewpoint robustness, VLM trajectory evaluation, and sim-to-real sanity checks.
 
 Current focus:
 
@@ -15,7 +15,7 @@ Current focus:
 - UC Berkeley, B.A. Data Science, 2024.
 - BAIR research: LLM decision systems, SFT, retrieval, solver-backed evaluation.
 - Berkeley ROAR: autonomous racing simulation infrastructure, opponent modeling, telemetry / safety analysis.
-- Founding Engineer at Mars Accounting / Minerva Intelligence: production AI agents, LLM routing, workflow automation, evals, backend systems.
+- Current Founding Engineer at Mars Accounting / Minerva Intelligence: production AI agents, LLM routing, workflow automation, evals, backend systems.
 - AI Engineer at BrightLight Health: VLM / OCR clinical intake, PHI-safe agent workflows, deterministic scoring systems.
 - Former ML/CV intern at Lexius: video models, action recognition, PyTorch training infrastructure.
 
