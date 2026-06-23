@@ -1,58 +1,101 @@
-## Hi there 👋 I’m Sergio W. Peterson
+## Sergio W. Peterson
 
-### 🎓 Education
-**Cal (UC Berkeley)** — B.A. in Data Science & Computer Science, Class of 2024
+ML engineer in San Francisco, moving into robot learning.
 
-### 💼 Experience
-- **Researcher at BAIR** (Berkeley AI Research) — LLM testing & tuning
-- **ML/CV Engineer at ROAR** (AI Racing Tech: Simulation & Perception, MLOps & Infrastructure)
-- **Intern at Lexius** — ML/CV research & development
----
+I am building toward robotics ML / research-engineering roles: vision policies, imitation learning, RL refinement, viewpoint robustness, VLM trajectory evaluation, and sim-to-real sanity checks.
 
-### 🚀 Featured Project
+Current focus:
 
-**Scholaria** — A React Native & Expo app I built to help you read, bookmark, and stay up-to-date with the latest research ideas available on iOS devices.  
-[![GitHub Org: Scholaria](https://img.shields.io/badge/GitHub-Scholaria-black?style=flat-square&logo=github)](https://github.com/Scholaria)
----
+- Robot-learning flagship: camera-viewpoint robustness for vision-only manipulation policies.
+- Experiment spine: fixed-camera BC baseline -> camera-shift degradation curve -> camera-randomization sweep -> BC + SAC/PPO refinement -> VLM failure evaluator -> small hardware check.
+- Near-term output: reproducible configs, rollout videos, robustness curves, failure taxonomy, and a clean technical writeup.
 
-### 📚 Favorite Papers & Resources
+## Background
 
-1. [**Attention Is All You Need**](https://arxiv.org/abs/1706.03762)  
-2. [**Diffusion Policy: Visuomotor Policy Learning via Action Diffusion**](https://arxiv.org/abs/2303.04137v5)  
-3. [**NeRF: Neural Radiance Fields for View Synthesis**](https://arxiv.org/abs/2003.08934)  
+- UC Berkeley, B.A. Data Science, 2024.
+- BAIR research: LLM decision systems, SFT, retrieval, solver-backed evaluation.
+- Berkeley ROAR: autonomous racing simulation infrastructure, opponent modeling, telemetry / safety analysis.
+- Founding Engineer at Mars Accounting / Minerva Intelligence: production AI agents, LLM routing, workflow automation, evals, backend systems.
+- AI Engineer at BrightLight Health: VLM / OCR clinical intake, PHI-safe agent workflows, deterministic scoring systems.
+- Former ML/CV intern at Lexius: video models, action recognition, PyTorch training infrastructure.
 
-*Plus, check out Scholaria for a live feed of these and many more!*
+## Featured Work
 
----
+### Robot Viewpoint Robustness Study
 
-### 🛠️ Tech Stack
+Active flagship project. A manipulation-policy study asking:
 
-![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)  
-![PyTorch](https://img.shields.io/badge/-PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)  
-![TensorFlow](https://img.shields.io/badge/-TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)  
-![OpenCV](https://img.shields.io/badge/-OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)  
-![ROS](https://img.shields.io/badge/-ROS-22314E?style=flat-square&logo=ros&logoColor=white)  
-![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=docker&logoColor=white)  
-![AWS](https://img.shields.io/badge/-AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white)  
-![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)  
-![React](https://img.shields.io/badge/-React-20232A?style=flat-square&logo=react&logoColor=61DAFB)  
-![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+> How much camera randomization helps, when it hurts, and where RL refinement can recover robustness after imitation learning fails.
 
----
+Current scaffold:
 
-### 📈 GitHub Widgets
+- Robosuite / MuJoCo project structure.
+- Timestamped run artifacts.
+- Config snapshots.
+- TensorBoard smoke logging.
+- 225-pose camera evaluation grid.
+- Random-rollout and camera-grid scripts.
 
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=SergioPeterson&theme=dark&hide_border=true)](https://github.com/SergioPeterson)  
----
+### taskcli
 
-### 🤝 Let’s Collaborate
+SWE-Bench-style verifiable-reward harness:
 
-- **Open to:** ML/CV research, autonomous systems, dashboards & MLOps  
-- **Email:** [sergiopeter2016@berkeley.edu](mailto:sergiopeter2016@berkeley.edu)  
-- **LinkedIn:** [linkedin.com/in/SergioPeterson](https://www.linkedin.com/in/SergioPeterson)
+- Imports coding tasks.
+- Builds isolated Docker environments.
+- Separates solver containers from grading containers.
+- Extracts only `solution.patch`.
+- Grades against fail-to-pass / pass-to-pass tests.
+- Logs runs and artifacts with SQLite.
 
-*“You can lose 100 times, all you need is to win once.”*  
+This is the RL-environment / eval-harness side of my work.
 
-![result (1)](https://github.com/SergioPeterson/SergioPeterson/assets/71860669/a68db9c3-5816-4c6a-a354-7f77ad5ca0a7)
+### VLM Procedural Assistant
 
+Real-time VLM system for procedural step and error detection over technician video.
 
+- Streaming video-language pipeline.
+- Step / error state machine.
+- F1 + latency scoring.
+- 140+ logged experiments.
+
+This informs the VLM trajectory-evaluator layer of my robot-learning work.
+
+## Technical Reports
+
+Non-peer-reviewed Berkeley technical reports and course research projects:
+
+- Safety Critical Edgecase Testing for High Speed Autonomy.
+- Grasp Planning with Sawyer.
+- State Estimation with dead reckoning, Kalman filters, and EKFs.
+- Nonholonomic Control with optimization, RRT, and sinusoidal steering.
+- Visual Servoing for Sawyer control.
+
+I include these as evidence of robotics fundamentals: control, estimation, planning, manipulation, telemetry, and safety evaluation.
+
+## Learning Notes
+
+I am keeping small RL reading artifacts lightweight and separate from the flagship:
+
+- Sutton & Barto Chapter 2: multi-arm bandits visual simulator.
+- Sutton & Barto Chapter 3: finite MDP visual simulator.
+- Current study path: Sutton & Barto, CS285, robot-learning / VLA papers, RLHF / GRPO references.
+
+## Stack
+
+Python, PyTorch, NumPy, OpenCV, Robosuite, MuJoCo, ROS, Docker, Terraform, AWS, Azure, TypeScript, NestJS, FastAPI, Postgres, Redis.
+
+ML / robotics interests:
+
+- Imitation learning.
+- Reinforcement learning.
+- Vision-language-action policies.
+- Robot manipulation.
+- Sim-to-real evaluation.
+- VLM reward / trajectory evaluators.
+- Verifiable eval harnesses.
+
+## Links
+
+- Website: [sergiopeterson.dev](https://sergiopeterson.dev)
+- LinkedIn: [linkedin.com/in/sergio-w-peterson](https://www.linkedin.com/in/sergio-w-peterson)
+- Email: [sergiopeterson.dev@gmail.com](mailto:sergiopeterson.dev@gmail.com)
