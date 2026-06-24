@@ -37,6 +37,12 @@
 </p>
 
 <p align="center">
+  <a href="https://leetcode.com/sergiopeter2016/">
+    <img src="https://leetcard.jacoblin.cool/sergiopeter2016?theme=dark&font=JetBrains%20Mono&ext=heatmap" alt="LeetCode stats"/>
+  </a>
+</p>
+
+<p align="center">
   <img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow,opencv,ros,docker,aws,azure,ts,nodejs,react,postgres,redis,terraform" alt="Skills"/>
 </p>
 
