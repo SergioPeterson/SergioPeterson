@@ -391,16 +391,43 @@ def _section_row(y: int, title: str) -> str:
     return _svg_line(y, (None, f"- {title}"), ("muted", rule))
 
 
+ASCII_EQUIPMENT_COLORS = {"#4f8fd8", "#aab2bd", "#7f8996", "#9aa4b2"}
+
+
+def _portrait_segment(text: str, color: str) -> str:
+    is_equipment = color in ASCII_EQUIPMENT_COLORS
+    rendered_color = "#808080" if is_equipment else color
+    rendered_text = " " * len(text) if is_equipment else text
+    return (
+        f'<tspan fill="{html.escape(rendered_color, quote=True)}">'
+        f"{html.escape(rendered_text)}</tspan>"
+    )
+
+
 def _portrait_block(portrait: list[list[list[str]]]) -> str:
     rows = []
     for index, segments in enumerate(portrait[:42]):
-        content = "".join(
-            f'<tspan fill="{html.escape(color, quote=True)}">'
-            f"{html.escape(text)}</tspan>"
-            for text, color in segments
-        )
+        content = "".join(_portrait_segment(text, color) for text, color in segments)
         rows.append(f'<tspan x="6" y="{65 + index * 10}">{content}</tspan>')
     return '<text class="portrait">' + "".join(rows) + "</text>"
+
+
+def _equipment_block(colors: dict[str, str]) -> str:
+    vector = 'vector-effect="non-scaling-stroke"'
+    return (
+        '<g class="equipment" fill="none" stroke-linecap="round" '
+        'stroke-linejoin="round">'
+        f'<path class="bow" d="M252 88 C292 145 300 205 270 252 '
+        f'C300 300 294 374 250 432" stroke="{colors["value"]}" '
+        f'stroke-width="2.4" {vector}/>'
+        f'<path class="string" d="M252 88 L205 245 L250 432" '
+        f'stroke="{colors["text"]}" stroke-width="0.9" {vector}/>'
+        f'<path class="arrow" d="M205 245 L345 270" '
+        f'stroke="{colors["muted"]}" stroke-width="1.2" {vector}/>'
+        f'<path class="stabilizer" d="M270 252 L352 338" '
+        f'stroke="{colors["muted"]}" stroke-width="1.4" {vector}/>'
+        "</g>"
+    )
 
 
 def render_svg(
@@ -431,6 +458,7 @@ def render_svg(
         "</style>",
         f'<rect width="985" height="530" rx="15" fill="{colors["background"]}"/>',
         f'<g fill="{colors["text"]}">',
+        _equipment_block(colors),
         _portrait_block(portrait),
         _svg_line(
             30,
