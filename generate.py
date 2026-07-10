@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import argparse
-import base64
 import calendar
 import datetime as dt
 import html
@@ -392,24 +391,21 @@ def _section_row(y: int, title: str) -> str:
     return _svg_line(y, (None, f"- {title}"), ("muted", rule))
 
 
-def _portrait_image(data_uri: str, color: str) -> str:
-    return (
-        "<defs>"
-        '<filter id="portrait-color" color-interpolation-filters="sRGB">'
-        f'<feFlood flood-color="{color}" result="color"/>'
-        '<feComposite in="color" in2="SourceAlpha" operator="in"/>'
-        "</filter>"
-        "</defs>"
-        '<image x="15" y="20" width="350" height="490" '
-        'preserveAspectRatio="xMidYMid meet" opacity="0.94" '
-        f'href="{html.escape(data_uri, quote=True)}" '
-        'filter="url(#portrait-color)"/>'
-    )
+def _portrait_block(portrait: list[list[list[str]]]) -> str:
+    rows = []
+    for index, segments in enumerate(portrait[:42]):
+        content = "".join(
+            f'<tspan fill="{html.escape(color, quote=True)}">'
+            f"{html.escape(text)}</tspan>"
+            for text, color in segments
+        )
+        rows.append(f'<tspan x="6" y="{65 + index * 10}">{content}</tspan>')
+    return '<text class="portrait">' + "".join(rows) + "</text>"
 
 
 def render_svg(
     theme: str,
-    portrait_data_uri: str,
+    portrait: list[list[list[str]]],
     stats: ProfileStats,
     *,
     today: dt.date,
@@ -431,10 +427,11 @@ def render_svg(
         f".muted{{fill:{colors['muted']}}}"
         f".add{{fill:{colors['add']}}}"
         f".del{{fill:{colors['del']}}}"
+        f".portrait{{fill:{colors['portrait']};font-size:7px}}"
         "</style>",
         f'<rect width="985" height="530" rx="15" fill="{colors["background"]}"/>',
         f'<g fill="{colors["text"]}">',
-        _portrait_image(portrait_data_uri, colors["portrait"]),
+        _portrait_block(portrait),
         _svg_line(
             30,
             (None, "sergio@peterson"),
@@ -555,14 +552,11 @@ def main() -> int:
     args = parser.parse_args()
 
     root = Path(__file__).resolve().parent
-    portrait_bytes = (root / "portrait_halftone.png").read_bytes()
-    portrait_data_uri = (
-        "data:image/png;base64," + base64.b64encode(portrait_bytes).decode("ascii")
-    )
+    portrait = json.loads((root / "portrait.json").read_text(encoding="utf-8"))
     token = os.environ.get("GITHUB_TOKEN")
     stats = fetch_public_stats(GitHubClient(token))
     for theme in PALETTES:
-        output = render_svg(theme, portrait_data_uri, stats, today=args.date)
+        output = render_svg(theme, portrait, stats, today=args.date)
         (root / f"{theme}_mode.svg").write_text(output, encoding="utf-8")
     return 0
 

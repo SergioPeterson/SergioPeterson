@@ -1,12 +1,12 @@
 import datetime as dt
-import struct
+import json
 import unittest
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
 import generate
 
-PORTRAIT_URI = "data:image/png;base64,AA=="
+PORTRAIT = [[("#", "#c0ffee")]]
 
 
 class AgeTests(unittest.TestCase):
@@ -42,7 +42,14 @@ class FormattingTests(unittest.TestCase):
         self.assertEqual(generate.format_number(-12005), "-12,005")
 
     def test_xml_text_is_escaped(self):
-        self.assertEqual(generate._span("<&"), "<tspan>&lt;&amp;</tspan>")
+        svg = generate.render_svg(
+            "dark",
+            [[("<&", "#c0ffee")]],
+            generate.ProfileStats(1, 2, 3, 4, 5, 6, 7),
+            today=dt.date(2026, 1, 10),
+        )
+        self.assertIn("&lt;&amp;", svg)
+        ET.fromstring(svg)
 
 
 class GraphQLAggregationTests(unittest.TestCase):
@@ -171,7 +178,7 @@ class RenderingTests(unittest.TestCase):
             with self.subTest(theme=theme):
                 svg = generate.render_svg(
                     theme,
-                    PORTRAIT_URI,
+                    PORTRAIT,
                     stats,
                     today=dt.date(2026, 1, 10),
                 )
@@ -184,9 +191,10 @@ class RenderingTests(unittest.TestCase):
                 self.assertIn("\u00a0", svg)
                 self.assertNotIn("$ whoami", svg)
                 self.assertNotIn("<circle", svg)
-                self.assertIn("<image", svg)
-                self.assertIn(PORTRAIT_URI, svg)
-                self.assertIn('id="portrait-color"', svg)
+                self.assertIn('<text class="portrait">', svg)
+                self.assertIn('fill="#c0ffee"', svg)
+                self.assertNotIn("<image", svg)
+                self.assertNotIn("data:image/png;base64", svg)
                 for text in required:
                     self.assertIn(text, svg)
 
@@ -196,18 +204,26 @@ class RenderingTests(unittest.TestCase):
                         rendered_text = "".join(text_element.itertext())
                         self.assertLessEqual(len(rendered_text), 64)
 
-    def test_halftone_portrait_has_expected_dimensions(self):
-        portrait_path = Path("portrait_halftone.png")
-        data = portrait_path.read_bytes()
-        self.assertEqual(data[:8], b"\x89PNG\r\n\x1a\n")
-        self.assertEqual(struct.unpack(">II", data[16:24]), (350, 490))
+    def test_ascii_portrait_fits_left_column(self):
+        portrait = json.loads(Path("portrait.json").read_text(encoding="utf-8"))
+        self.assertGreaterEqual(len(portrait), 38)
+        self.assertLessEqual(len(portrait), 42)
+        self.assertLessEqual(
+            max(sum(len(text) for text, _ in row) for row in portrait),
+            84,
+        )
+        allowed = set("@%#*+=-:. ")
+        self.assertTrue(
+            all(set(text) <= allowed for row in portrait for text, _ in row)
+        )
         self.assertFalse(Path("portrait.txt").exists())
+        self.assertFalse(Path("portrait_halftone.png").exists())
 
     def test_rejects_unknown_theme(self):
         with self.assertRaises(ValueError):
             generate.render_svg(
                 "sepia",
-                PORTRAIT_URI,
+                PORTRAIT,
                 generate.ProfileStats(0, 0, 0, 0, 0, 0, 0),
                 today=dt.date(2026, 1, 10),
             )
