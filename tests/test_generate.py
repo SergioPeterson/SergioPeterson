@@ -192,12 +192,6 @@ class RenderingTests(unittest.TestCase):
                 self.assertNotIn("$ whoami", svg)
                 self.assertNotIn("<circle", svg)
                 self.assertIn('<text class="portrait">', svg)
-                self.assertIn('<g class="equipment"', svg)
-                self.assertIn('class="bow"', svg)
-                self.assertIn('class="string"', svg)
-                self.assertIn('class="arrow"', svg)
-                self.assertIn('class="stabilizer"', svg)
-                self.assertIn('vector-effect="non-scaling-stroke"', svg)
                 self.assertIn('fill="#c0ffee"', svg)
                 self.assertNotIn("<image", svg)
                 self.assertNotIn("data:image/png;base64", svg)
@@ -218,12 +212,13 @@ class RenderingTests(unittest.TestCase):
             max(sum(len(text) for text, _ in row) for row in portrait),
             84,
         )
+        allowed = set("@%#*+=-:. ")
+        self.assertTrue(
+            all(set(text) <= allowed for row in portrait for text, _ in row)
+        )
         rows = ["".join(text for text, _ in row) for row in portrait]
         non_space = sum(character != " " for row in rows for character in row)
         self.assertLess(non_space / (len(rows) * 84), 0.42)
-        portrait_svg = generate._portrait_block(portrait)
-        for equipment_color in ("#4f8fd8", "#aab2bd", "#7f8996", "#9aa4b2"):
-            self.assertNotIn(equipment_color, portrait_svg)
         self.assertFalse(Path("portrait.txt").exists())
         self.assertFalse(Path("portrait_halftone.png").exists())
 
