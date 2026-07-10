@@ -212,13 +212,18 @@ class RenderingTests(unittest.TestCase):
             max(sum(len(text) for text, _ in row) for row in portrait),
             84,
         )
-        allowed = set("@%#*+=-:. ")
+        allowed = set("@%#*+=-:. /\\|")
         self.assertTrue(
             all(set(text) <= allowed for row in portrait for text, _ in row)
         )
         rows = ["".join(text for text, _ in row) for row in portrait]
         non_space = sum(character != " " for row in rows for character in row)
         self.assertLess(non_space / (len(rows) * 84), 0.42)
+        stabilizer_widths = [
+            sum(character != " " for character in row[68:]) for row in rows
+        ]
+        self.assertLessEqual(max(stabilizer_widths), 3)
+        self.assertGreaterEqual(sum(stabilizer_widths), 10)
         self.assertFalse(Path("portrait.txt").exists())
         self.assertFalse(Path("portrait_halftone.png").exists())
 
