@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="985" height="530" viewBox="0 0 985 530" role="img" aria-label="Sergio W. Peterson terminal profile">
+<style>text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace;white-space:pre}</style>
+<rect width="985" height="530" rx="14" fill="#ffffff"/>
+<rect x="8" y="8" width="969" height="514" rx="10" fill="#f6f8fa" stroke="#d0d7de"/>
+<circle cx="30" cy="29" r="6" fill="#ff5f56"/>
+<circle cx="50" cy="29" r="6" fill="#ffbd2e"/>
+<circle cx="70" cy="29" r="6" fill="#27c93f"/>
+<text x="492" y="34" fill="#57606a" font-size="12" font-weight="400">sergio@github: ~</text>
+<line x1="16" y1="48" x2="969" y2="48" stroke="#d0d7de"/>
+<text x="28" y="76" fill="#116329" font-size="11" font-weight="400">%#######*******+++++********#%###%@@#====:</text>
+<text x="28" y="89" fill="#116329" font-size="11" font-weight="400">##*************####***++*********#@%@+===-</text>
+<text x="28" y="102" fill="#116329" font-size="11" font-weight="400">++++++***##%%@@@@@@%%%%#*+********#*+===+-</text>
+<text x="28" y="115" fill="#116329" font-size="11" font-weight="400">+++++**#%%@@@@*#@@%%%%%%%#*+++**+=---===+-</text>
+<text x="28" y="128" fill="#116329" font-size="11" font-weight="400">++++*#%%%%%###=%@%%%%%%%%%%**+==---====++-</text>
+<text x="28" y="141" fill="#116329" font-size="11" font-weight="400">+++*#%%%@@@%+:#%@@%%%%%%%%%##*=-----=====-</text>
+<text x="28" y="154" fill="#116329" font-size="11" font-weight="400">==*###%%@%%*=-+%+#%%%%##%%%*%#*=----=====-</text>
+<text x="28" y="167" fill="#116329" font-size="11" font-weight="400">=+*###%%@##:-**+:-%@%##%%%#*%%*+-----====-</text>
+<text x="28" y="180" fill="#116329" font-size="11" font-weight="400">=+####%#%@@@#**=::+#@@%##%**%%#+------===-</text>
+<text x="28" y="193" fill="#116329" font-size="11" font-weight="400">=+####%#%@@@@@%-=*==%@@%#%###%#+:-----===-</text>
+<text x="28" y="206" fill="#116329" font-size="11" font-weight="400">-+######%@@%#%*%@%*%++@@##%%#%#+:------===</text>
+<text x="28" y="219" fill="#116329" font-size="11" font-weight="400">-+%%####@@@@@%:#@%@@= *@%###%##+:::----===</text>
+<text x="28" y="232" fill="#116329" font-size="11" font-weight="400">-+%#####@@@@%%#@@@###%#*#%%%###+::::::-===</text>
+<text x="28" y="245" fill="#116329" font-size="11" font-weight="400">-+%#%#%%@@%@%@%#@@@@#*++#%@%#%#+::::::-===</text>
+<text x="28" y="258" fill="#116329" font-size="11" font-weight="400">-+%#%###@@*%@@%#@@@%@=*%#*#%%%%+::::::-===</text>
+<text x="28" y="271" fill="#116329" font-size="11" font-weight="400">:+%####%@%#@@@#%@%%@%*##%%#%%##*:::::::===</text>
+<text x="28" y="284" fill="#116329" font-size="11" font-weight="400">.+%####%%@@@@@%#@@@@*##*#%%%%##*:::::::===</text>
+<text x="28" y="297" fill="#116329" font-size="11" font-weight="400">-*%####%@@@@@@*#@@@%*%#+*%%%%%%*---::.:===</text>
+<text x="28" y="310" fill="#116329" font-size="11" font-weight="400">=#%####@%%@@@@*#@@@%%@@@%%%%%%%*::---::===</text>
+<text x="28" y="323" fill="#116329" font-size="11" font-weight="400">+#%%%#%@+%@@@%+#@@@@@@@@%%%%%%%*::..:--===</text>
+<text x="28" y="336" fill="#116329" font-size="11" font-weight="400">*#%%%%@@*%@@@@=%@@@@@@@@@@@@@@@#----:::++=</text>
+<text x="28" y="349" fill="#116329" font-size="11" font-weight="400">... . :%*:..:@*.::::.:::::::::::.....  -==</text>
+<text x="28" y="362" fill="#116329" font-size="11" font-weight="400">----=-+%+===-%%--=---------:::::::::...+*+</text>
+<text x="28" y="375" fill="#116329" font-size="11" font-weight="400">....  +#:    +%*: .......::::::-:---------</text>
+<text x="405" y="80" fill="#1a7f37" font-size="16" font-weight="600">$ whoami</text>
+<text x="405" y="105" fill="#24292f" font-size="23" font-weight="700">Sergio W. Peterson</text>
+<text x="405" y="130" fill="#24292f" font-size="13" font-weight="400">Founding Engineer @ Mars Accounting / Minerva Intelligence</text>
+<text x="405" y="151" fill="#0969da" font-size="14" font-weight="600">AI &amp; Robotics Engineer</text>
+<text x="405" y="172" fill="#24292f" font-size="13" font-weight="400">Uptime              24 years, 6 months, 0 days</text>
+<text x="405" y="193" fill="#24292f" font-size="13" font-weight="400">Stack               Python · PyTorch · TypeScript · React</text>
+<text x="405" y="214" fill="#24292f" font-size="13" font-weight="400">                    ROS · Docker · AWS</text>
+<text x="405" y="235" fill="#24292f" font-size="13" font-weight="400">Focus               Robot learning · VLM systems</text>
+<text x="405" y="256" fill="#24292f" font-size="13" font-weight="400">                    Evaluation infrastructure</text>
+<text x="405" y="277" fill="#0969da" font-size="13" font-weight="400">Web                 sergiopeterson.dev</text>
+<text x="405" y="298" fill="#0969da" font-size="13" font-weight="400">LinkedIn            linkedin.com/in/sergio-w-peterson</text>
+<text x="405" y="319" fill="#0969da" font-size="13" font-weight="400">Email               sergiopeterson.dev@gmail.com</text>
+<line x1="28" y1="394" x2="957" y2="394" stroke="#d0d7de"/>
+<text x="28" y="420" fill="#1a7f37" font-size="14" font-weight="600">$ github-stats --scope public-default-branches</text>
+<text x="720" y="420" fill="#57606a" font-size="11" font-weight="400">Public default-branch data</text>
+<text x="40" y="447" fill="#24292f" font-size="12" font-weight="400">Owned Repos                   35</text>
+<text x="40" y="466" fill="#24292f" font-size="12" font-weight="400">Contributed Repos              2</text>
+<text x="40" y="485" fill="#24292f" font-size="12" font-weight="400">Stars                          3</text>
+<text x="40" y="504" fill="#24292f" font-size="12" font-weight="400">Followers                      5</text>
+<text x="510" y="447" fill="#24292f" font-size="12" font-weight="400">Commits                     235</text>
+<text x="510" y="466" fill="#24292f" font-size="12" font-weight="400">Net Lines               348,109</text>
+<text x="510" y="485" fill="#1a7f37" font-size="12" font-weight="400">Additions (++)          459,057</text>
+<text x="510" y="504" fill="#cf222e" font-size="12" font-weight="400">Deletions (--)          110,948</text>
+</svg>
