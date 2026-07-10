@@ -337,43 +337,71 @@ def fetch_public_stats(client: GitHubClient) -> ProfileStats:
 
 PALETTES = {
     "dark": {
-        "background": "#0d1117",
-        "panel": "#161b22",
-        "border": "#30363d",
+        "background": "#161b22",
         "text": "#c9d1d9",
-        "muted": "#8b949e",
-        "accent": "#58a6ff",
-        "green": "#3fb950",
-        "red": "#f85149",
-        "portrait": "#7ee787",
+        "muted": "#616e7f",
+        "key": "#ffa657",
+        "value": "#a5d6ff",
+        "add": "#3fb950",
+        "del": "#f85149",
+        "portrait": "#c9d1d9",
     },
     "light": {
-        "background": "#ffffff",
-        "panel": "#f6f8fa",
-        "border": "#d0d7de",
+        "background": "#f6f8fa",
         "text": "#24292f",
         "muted": "#57606a",
-        "accent": "#0969da",
-        "green": "#1a7f37",
-        "red": "#cf222e",
-        "portrait": "#116329",
+        "key": "#953800",
+        "value": "#0550ae",
+        "add": "#1a7f37",
+        "del": "#cf222e",
+        "portrait": "#24292f",
     },
 }
 
 
-def _text(
-    x: int,
+def _span(value: str, class_name: str | None = None) -> str:
+    class_attribute = f' class="{class_name}"' if class_name else ""
+    return f"<tspan{class_attribute}>{html.escape(value)}</tspan>"
+
+
+def _svg_line(
     y: int,
-    value: str,
-    color: str,
-    *,
-    size: int = 14,
-    weight: str = "400",
+    *segments: tuple[str | None, str],
+    x: int = 390,
 ) -> str:
-    return (
-        f'<text x="{x}" y="{y}" fill="{color}" font-size="{size}" '
-        f'font-weight="{weight}">{html.escape(value)}</text>'
+    content = "".join(_span(value, class_name) for class_name, value in segments)
+    return f'<text x="{x}" y="{y}">{content}</text>'
+
+
+def _leader_row(y: int, key: str, value: str) -> str:
+    occupied = len(key) + len(value) + 3
+    dots = " " + "." * max(2, 60 - occupied) + " "
+    return _svg_line(
+        y,
+        ("muted", ". "),
+        ("key", key),
+        (None, ":"),
+        ("muted", dots),
+        ("value", value),
     )
+
+
+def _section_row(y: int, title: str) -> str:
+    rule = " " + "—" * max(1, 56 - len(title))
+    return _svg_line(y, (None, f"- {title}"), ("muted", rule))
+
+
+def _portrait_block(portrait: list[str]) -> str:
+    lines = list(portrait)
+    while lines and not lines[0]:
+        lines.pop(0)
+    while lines and not lines[-1]:
+        lines.pop()
+    tspans = [
+        f'<tspan x="15" y="{30 + index * 20}">{html.escape(line)}</tspan>'
+        for index, line in enumerate(lines[:25])
+    ]
+    return '<text class="portrait">' + "".join(tspans) + "</text>"
 
 
 def render_svg(
@@ -389,133 +417,128 @@ def render_svg(
     age = format_age(BIRTH_DATE, today)
 
     parts = [
-        '<svg xmlns="http://www.w3.org/2000/svg" width="985" height="530" '
-        'viewBox="0 0 985 530" role="img" '
+        '<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" '
+        'width="985px" height="530px" '
+        'viewBox="0 0 985 530" font-size="15px" role="img" '
         'aria-label="Sergio W. Peterson terminal profile">',
         "<style>"
-        "text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace;"
-        "white-space:pre}"
+        "text{font-family:Consolas,'Liberation Mono',monospace;white-space:pre}"
+        f".key{{fill:{colors['key']}}}"
+        f".value{{fill:{colors['value']}}}"
+        f".muted{{fill:{colors['muted']}}}"
+        f".add{{fill:{colors['add']}}}"
+        f".del{{fill:{colors['del']}}}"
+        f".portrait{{fill:{colors['portrait']}}}"
         "</style>",
-        f'<rect width="985" height="530" rx="14" fill="{colors["background"]}"/>',
-        f'<rect x="8" y="8" width="969" height="514" rx="10" '
-        f'fill="{colors["panel"]}" stroke="{colors["border"]}"/>',
-        '<circle cx="30" cy="29" r="6" fill="#ff5f56"/>',
-        '<circle cx="50" cy="29" r="6" fill="#ffbd2e"/>',
-        '<circle cx="70" cy="29" r="6" fill="#27c93f"/>',
-        _text(492, 34, "sergio@github: ~", colors["muted"], size=12),
-        f'<line x1="16" y1="48" x2="969" y2="48" stroke="{colors["border"]}"/>',
+        f'<rect width="985" height="530" rx="15" fill="{colors["background"]}"/>',
+        f'<g fill="{colors["text"]}">',
+        _portrait_block(portrait),
+        _svg_line(
+            30,
+            (None, "sergio@peterson"),
+            ("muted", " — "),
+            (None, "Sergio W. Peterson"),
+            ("muted", " " + "—" * 21),
+        ),
+        _leader_row(50, "OS", "macOS 26, Linux, iOS"),
+        _leader_row(70, "Uptime", age),
+        _leader_row(90, "Host", "Mars Accounting / Minerva Intelligence"),
+        _leader_row(
+            110,
+            "Kernel",
+            "Founding Engineer · AI / Robotics",
+        ),
+        _leader_row(130, "IDE", "Cursor, VS Code, Jupyter"),
+        _leader_row(
+            150,
+            "Focus",
+            "VLM systems, evaluation infrastructure",
+        ),
+        _leader_row(
+            170,
+            "Languages.Programming",
+            "Python, TypeScript, C++, SQL",
+        ),
+        _leader_row(
+            190,
+            "Languages.Frameworks",
+            "PyTorch, React, ROS, FastAPI",
+        ),
+        _leader_row(
+            210,
+            "Languages.Computer",
+            "HTML, CSS, JSON, YAML, LaTeX",
+        ),
+        _leader_row(230, "Languages.Platforms", "Docker, AWS, Linux"),
+        _leader_row(250, "Languages.Real", "English"),
+        _leader_row(
+            270,
+            "Hobbies.Software",
+            "Robot learning, Agent systems",
+        ),
+        _leader_row(
+            290,
+            "Hobbies.Hardware",
+            "Robotics, autonomous racing",
+        ),
+        _section_row(320, "Contact"),
+        _leader_row(340, "Website", "sergiopeterson.dev"),
+        _leader_row(360, "Email", "sergiopeterson.dev@gmail.com"),
+        _leader_row(
+            380,
+            "LinkedIn",
+            "linkedin.com/in/sergio-w-peterson",
+        ),
+        _leader_row(400, "Location", "San Francisco, CA"),
+        _leader_row(420, "GitHub", "github.com/SergioPeterson"),
+        _section_row(450, "GitHub Stats"),
+        _svg_line(
+            470,
+            ("muted", ". "),
+            ("key", "Repos"),
+            (None, ":\u00a0"),
+            ("muted", "....\u00a0"),
+            ("value", format_number(stats.owned_repos)),
+            (None, "\u00a0{"),
+            ("key", "Contributed"),
+            (None, ":\u00a0"),
+            ("value", format_number(stats.contributed_repos)),
+            (None, "}\u00a0|\u00a0"),
+            ("key", "Stars"),
+            (None, ":\u00a0"),
+            ("muted", "....\u00a0"),
+            ("value", format_number(stats.stars)),
+        ),
+        _svg_line(
+            490,
+            ("muted", ". "),
+            ("key", "Commits"),
+            (None, ":\u00a0"),
+            ("muted", "........\u00a0"),
+            ("value", format_number(stats.commits)),
+            (None, "\u00a0|\u00a0"),
+            ("key", "Followers"),
+            (None, ":\u00a0"),
+            ("muted", "........\u00a0"),
+            ("value", format_number(stats.followers)),
+        ),
+        _svg_line(
+            510,
+            ("muted", ". "),
+            ("key", "Lines of Code on GitHub"),
+            (None, ":\u00a0"),
+            ("value", format_number(stats.net_lines)),
+            (None, "\u00a0(\u00a0"),
+            ("add", format_number(stats.additions)),
+            ("add", "++"),
+            (None, ",\u00a0"),
+            ("del", format_number(stats.deletions)),
+            ("del", "--"),
+            (None, "\u00a0)"),
+        ),
+        "</g>",
+        "</svg>",
     ]
-
-    for index, line in enumerate(portrait[:24]):
-        parts.append(
-            _text(28, 76 + index * 13, line, colors["portrait"], size=11)
-        )
-
-    info = [
-        ("$ whoami", colors["green"], 16, "600"),
-        ("Sergio W. Peterson", colors["text"], 23, "700"),
-        (
-            "Founding Engineer @ Mars Accounting / Minerva Intelligence",
-            colors["text"],
-            13,
-            "400",
-        ),
-        ("AI & Robotics Engineer", colors["accent"], 14, "600"),
-        (f"Uptime              {age}", colors["text"], 13, "400"),
-        (
-            "Stack               Python · PyTorch · TypeScript · React",
-            colors["text"],
-            13,
-            "400",
-        ),
-        ("                    ROS · Docker · AWS", colors["text"], 13, "400"),
-        ("Focus               Robot learning · VLM systems", colors["text"], 13, "400"),
-        (
-            "                    Evaluation infrastructure",
-            colors["text"],
-            13,
-            "400",
-        ),
-        ("Web                 sergiopeterson.dev", colors["accent"], 13, "400"),
-        (
-            "LinkedIn            linkedin.com/in/sergio-w-peterson",
-            colors["accent"],
-            13,
-            "400",
-        ),
-        (
-            "Email               sergiopeterson.dev@gmail.com",
-            colors["accent"],
-            13,
-            "400",
-        ),
-    ]
-    y = 80
-    for value, color, size, weight in info:
-        parts.append(_text(405, y, value, color, size=size, weight=weight))
-        y += 25 if size >= 16 else 21
-
-    parts.extend(
-        [
-            f'<line x1="28" y1="394" x2="957" y2="394" '
-            f'stroke="{colors["border"]}"/>',
-            _text(
-                28,
-                420,
-                "$ github-stats --scope public-default-branches",
-                colors["green"],
-                size=14,
-                weight="600",
-            ),
-            _text(
-                720,
-                420,
-                "Public default-branch data",
-                colors["muted"],
-                size=11,
-            ),
-        ]
-    )
-
-    left_stats = [
-        ("Owned Repos", stats.owned_repos),
-        ("Contributed Repos", stats.contributed_repos),
-        ("Stars", stats.stars),
-        ("Followers", stats.followers),
-    ]
-    right_stats = [
-        ("Commits", stats.commits),
-        ("Net Lines", stats.net_lines),
-        ("Additions (++)", stats.additions),
-        ("Deletions (--)", stats.deletions),
-    ]
-    for index, (label, value) in enumerate(left_stats):
-        parts.append(
-            _text(
-                40,
-                447 + index * 19,
-                f"{label:<19} {format_number(value):>12}",
-                colors["text"],
-                size=12,
-            )
-        )
-    for index, (label, value) in enumerate(right_stats):
-        value_color = colors["text"]
-        if label == "Additions (++)":
-            value_color = colors["green"]
-        elif label == "Deletions (--)":
-            value_color = colors["red"]
-        parts.append(
-            _text(
-                510,
-                447 + index * 19,
-                f"{label:<16} {format_number(value):>14}",
-                value_color,
-                size=12,
-            )
-        )
-
-    parts.append("</svg>")
     return "\n".join(parts) + "\n"
 
 

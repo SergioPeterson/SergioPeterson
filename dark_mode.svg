@@ -1,57 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="985" height="530" viewBox="0 0 985 530" role="img" aria-label="Sergio W. Peterson terminal profile">
-<style>text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace;white-space:pre}</style>
-<rect width="985" height="530" rx="14" fill="#0d1117"/>
-<rect x="8" y="8" width="969" height="514" rx="10" fill="#161b22" stroke="#30363d"/>
-<circle cx="30" cy="29" r="6" fill="#ff5f56"/>
-<circle cx="50" cy="29" r="6" fill="#ffbd2e"/>
-<circle cx="70" cy="29" r="6" fill="#27c93f"/>
-<text x="492" y="34" fill="#8b949e" font-size="12" font-weight="400">sergio@github: ~</text>
-<line x1="16" y1="48" x2="969" y2="48" stroke="#30363d"/>
-<text x="28" y="76" fill="#7ee787" font-size="11" font-weight="400">%#######*******+++++********#%###%@@#====:</text>
-<text x="28" y="89" fill="#7ee787" font-size="11" font-weight="400">##*************####***++*********#@%@+===-</text>
-<text x="28" y="102" fill="#7ee787" font-size="11" font-weight="400">++++++***##%%@@@@@@%%%%#*+********#*+===+-</text>
-<text x="28" y="115" fill="#7ee787" font-size="11" font-weight="400">+++++**#%%@@@@*#@@%%%%%%%#*+++**+=---===+-</text>
-<text x="28" y="128" fill="#7ee787" font-size="11" font-weight="400">++++*#%%%%%###=%@%%%%%%%%%%**+==---====++-</text>
-<text x="28" y="141" fill="#7ee787" font-size="11" font-weight="400">+++*#%%%@@@%+:#%@@%%%%%%%%%##*=-----=====-</text>
-<text x="28" y="154" fill="#7ee787" font-size="11" font-weight="400">==*###%%@%%*=-+%+#%%%%##%%%*%#*=----=====-</text>
-<text x="28" y="167" fill="#7ee787" font-size="11" font-weight="400">=+*###%%@##:-**+:-%@%##%%%#*%%*+-----====-</text>
-<text x="28" y="180" fill="#7ee787" font-size="11" font-weight="400">=+####%#%@@@#**=::+#@@%##%**%%#+------===-</text>
-<text x="28" y="193" fill="#7ee787" font-size="11" font-weight="400">=+####%#%@@@@@%-=*==%@@%#%###%#+:-----===-</text>
-<text x="28" y="206" fill="#7ee787" font-size="11" font-weight="400">-+######%@@%#%*%@%*%++@@##%%#%#+:------===</text>
-<text x="28" y="219" fill="#7ee787" font-size="11" font-weight="400">-+%%####@@@@@%:#@%@@= *@%###%##+:::----===</text>
-<text x="28" y="232" fill="#7ee787" font-size="11" font-weight="400">-+%#####@@@@%%#@@@###%#*#%%%###+::::::-===</text>
-<text x="28" y="245" fill="#7ee787" font-size="11" font-weight="400">-+%#%#%%@@%@%@%#@@@@#*++#%@%#%#+::::::-===</text>
-<text x="28" y="258" fill="#7ee787" font-size="11" font-weight="400">-+%#%###@@*%@@%#@@@%@=*%#*#%%%%+::::::-===</text>
-<text x="28" y="271" fill="#7ee787" font-size="11" font-weight="400">:+%####%@%#@@@#%@%%@%*##%%#%%##*:::::::===</text>
-<text x="28" y="284" fill="#7ee787" font-size="11" font-weight="400">.+%####%%@@@@@%#@@@@*##*#%%%%##*:::::::===</text>
-<text x="28" y="297" fill="#7ee787" font-size="11" font-weight="400">-*%####%@@@@@@*#@@@%*%#+*%%%%%%*---::.:===</text>
-<text x="28" y="310" fill="#7ee787" font-size="11" font-weight="400">=#%####@%%@@@@*#@@@%%@@@%%%%%%%*::---::===</text>
-<text x="28" y="323" fill="#7ee787" font-size="11" font-weight="400">+#%%%#%@+%@@@%+#@@@@@@@@%%%%%%%*::..:--===</text>
-<text x="28" y="336" fill="#7ee787" font-size="11" font-weight="400">*#%%%%@@*%@@@@=%@@@@@@@@@@@@@@@#----:::++=</text>
-<text x="28" y="349" fill="#7ee787" font-size="11" font-weight="400">... . :%*:..:@*.::::.:::::::::::.....  -==</text>
-<text x="28" y="362" fill="#7ee787" font-size="11" font-weight="400">----=-+%+===-%%--=---------:::::::::...+*+</text>
-<text x="28" y="375" fill="#7ee787" font-size="11" font-weight="400">....  +#:    +%*: .......::::::-:---------</text>
-<text x="405" y="80" fill="#3fb950" font-size="16" font-weight="600">$ whoami</text>
-<text x="405" y="105" fill="#c9d1d9" font-size="23" font-weight="700">Sergio W. Peterson</text>
-<text x="405" y="130" fill="#c9d1d9" font-size="13" font-weight="400">Founding Engineer @ Mars Accounting / Minerva Intelligence</text>
-<text x="405" y="151" fill="#58a6ff" font-size="14" font-weight="600">AI &amp; Robotics Engineer</text>
-<text x="405" y="172" fill="#c9d1d9" font-size="13" font-weight="400">Uptime              24 years, 6 months, 0 days</text>
-<text x="405" y="193" fill="#c9d1d9" font-size="13" font-weight="400">Stack               Python · PyTorch · TypeScript · React</text>
-<text x="405" y="214" fill="#c9d1d9" font-size="13" font-weight="400">                    ROS · Docker · AWS</text>
-<text x="405" y="235" fill="#c9d1d9" font-size="13" font-weight="400">Focus               Robot learning · VLM systems</text>
-<text x="405" y="256" fill="#c9d1d9" font-size="13" font-weight="400">                    Evaluation infrastructure</text>
-<text x="405" y="277" fill="#58a6ff" font-size="13" font-weight="400">Web                 sergiopeterson.dev</text>
-<text x="405" y="298" fill="#58a6ff" font-size="13" font-weight="400">LinkedIn            linkedin.com/in/sergio-w-peterson</text>
-<text x="405" y="319" fill="#58a6ff" font-size="13" font-weight="400">Email               sergiopeterson.dev@gmail.com</text>
-<line x1="28" y1="394" x2="957" y2="394" stroke="#30363d"/>
-<text x="28" y="420" fill="#3fb950" font-size="14" font-weight="600">$ github-stats --scope public-default-branches</text>
-<text x="720" y="420" fill="#8b949e" font-size="11" font-weight="400">Public default-branch data</text>
-<text x="40" y="447" fill="#c9d1d9" font-size="12" font-weight="400">Owned Repos                   35</text>
-<text x="40" y="466" fill="#c9d1d9" font-size="12" font-weight="400">Contributed Repos              2</text>
-<text x="40" y="485" fill="#c9d1d9" font-size="12" font-weight="400">Stars                          3</text>
-<text x="40" y="504" fill="#c9d1d9" font-size="12" font-weight="400">Followers                      5</text>
-<text x="510" y="447" fill="#c9d1d9" font-size="12" font-weight="400">Commits                     238</text>
-<text x="510" y="466" fill="#c9d1d9" font-size="12" font-weight="400">Net Lines               348,964</text>
-<text x="510" y="485" fill="#3fb950" font-size="12" font-weight="400">Additions (++)          459,999</text>
-<text x="510" y="504" fill="#f85149" font-size="12" font-weight="400">Deletions (--)          111,035</text>
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="985px" height="530px" viewBox="0 0 985 530" font-size="15px" role="img" aria-label="Sergio W. Peterson terminal profile">
+<style>text{font-family:Consolas,'Liberation Mono',monospace;white-space:pre}.key{fill:#ffa657}.value{fill:#a5d6ff}.muted{fill:#616e7f}.add{fill:#3fb950}.del{fill:#f85149}.portrait{fill:#c9d1d9}</style>
+<rect width="985" height="530" rx="15" fill="#161b22"/>
+<g fill="#c9d1d9">
+<text class="portrait"><tspan x="15" y="30">               .:**++++*+++-:.</tspan><tspan x="15" y="50">           :+#@@@@@@@@@@@@@@%#+=</tspan><tspan x="15" y="70">         -#@@@@@@@@@@@@@@@@@@@@#-</tspan><tspan x="15" y="90">       :#@@@@@@@@@@@@@@@@@@@@@@@*-</tspan><tspan x="15" y="110">       #@@@@@@@@@@@@@@@@@@@@@@@@@#-</tspan><tspan x="15" y="130">      =@%#%%@%@@@@@@@@@@@@@@@@@@@@#-</tspan><tspan x="15" y="150">      #%***#%##@@@@@@@@@@@@@@@@@@@@*:</tspan><tspan x="15" y="170">      *#+*+#%**%@%%#%@@@@@@@@@@@@@@+.</tspan><tspan x="15" y="190">      :+*##%*+#%%##%@@@@@@@@@@@@@@#=</tspan><tspan x="15" y="210">    :=+-=##*=*#%%%%%%##**%@@@@@@@@*:</tspan><tspan x="15" y="230">  :*---=*#@#-*###*##*+**#%@@@@@@@#+</tspan><tspan x="15" y="250">   :   +@@@#%@@@@%@@%######%@%##%#.</tspan><tspan x="15" y="270">       #@@*+#@@@@@@@@%#**#@%%++#%.</tspan><tspan x="15" y="290">       +%*=**%@@@@@@%#***##*++##.</tspan><tspan x="15" y="310">       .-:-***#%%@@%#*++***+*#*.</tspan><tspan x="15" y="330">        -:=***+++++++++***#%#+.</tspan><tspan x="15" y="350">        :-+*###*++++++****#+.</tspan><tspan x="15" y="370">         :=+**+++++++*##*#*=::::.</tspan><tspan x="15" y="390">          =****++***##*+*#*---::--:.</tspan><tspan x="15" y="410">          .=+*******+++***+.</tspan><tspan x="15" y="430">             :+++++===-:.</tspan><tspan x="15" y="450">             .++=-:.</tspan><tspan x="15" y="470">              :</tspan></text>
+<text x="390" y="30"><tspan>sergio@peterson</tspan><tspan class="muted"> — </tspan><tspan>Sergio W. Peterson</tspan><tspan class="muted"> —————————————————————</tspan></text>
+<text x="390" y="50"><tspan class="muted">. </tspan><tspan class="key">OS</tspan><tspan>:</tspan><tspan class="muted"> ................................... </tspan><tspan class="value">macOS 26, Linux, iOS</tspan></text>
+<text x="390" y="70"><tspan class="muted">. </tspan><tspan class="key">Uptime</tspan><tspan>:</tspan><tspan class="muted"> ......................... </tspan><tspan class="value">24 years, 6 months, 0 days</tspan></text>
+<text x="390" y="90"><tspan class="muted">. </tspan><tspan class="key">Host</tspan><tspan>:</tspan><tspan class="muted"> ............... </tspan><tspan class="value">Mars Accounting / Minerva Intelligence</tspan></text>
+<text x="390" y="110"><tspan class="muted">. </tspan><tspan class="key">Kernel</tspan><tspan>:</tspan><tspan class="muted"> .................. </tspan><tspan class="value">Founding Engineer · AI / Robotics</tspan></text>
+<text x="390" y="130"><tspan class="muted">. </tspan><tspan class="key">IDE</tspan><tspan>:</tspan><tspan class="muted"> .............................. </tspan><tspan class="value">Cursor, VS Code, Jupyter</tspan></text>
+<text x="390" y="150"><tspan class="muted">. </tspan><tspan class="key">Focus</tspan><tspan>:</tspan><tspan class="muted"> .............. </tspan><tspan class="value">VLM systems, evaluation infrastructure</tspan></text>
+<text x="390" y="170"><tspan class="muted">. </tspan><tspan class="key">Languages.Programming</tspan><tspan>:</tspan><tspan class="muted"> ........ </tspan><tspan class="value">Python, TypeScript, C++, SQL</tspan></text>
+<text x="390" y="190"><tspan class="muted">. </tspan><tspan class="key">Languages.Frameworks</tspan><tspan>:</tspan><tspan class="muted"> ......... </tspan><tspan class="value">PyTorch, React, ROS, FastAPI</tspan></text>
+<text x="390" y="210"><tspan class="muted">. </tspan><tspan class="key">Languages.Computer</tspan><tspan>:</tspan><tspan class="muted"> ........... </tspan><tspan class="value">HTML, CSS, JSON, YAML, LaTeX</tspan></text>
+<text x="390" y="230"><tspan class="muted">. </tspan><tspan class="key">Languages.Platforms</tspan><tspan>:</tspan><tspan class="muted"> .................... </tspan><tspan class="value">Docker, AWS, Linux</tspan></text>
+<text x="390" y="250"><tspan class="muted">. </tspan><tspan class="key">Languages.Real</tspan><tspan>:</tspan><tspan class="muted"> .................................... </tspan><tspan class="value">English</tspan></text>
+<text x="390" y="270"><tspan class="muted">. </tspan><tspan class="key">Hobbies.Software</tspan><tspan>:</tspan><tspan class="muted"> ............ </tspan><tspan class="value">Robot learning, Agent systems</tspan></text>
+<text x="390" y="290"><tspan class="muted">. </tspan><tspan class="key">Hobbies.Hardware</tspan><tspan>:</tspan><tspan class="muted"> .............. </tspan><tspan class="value">Robotics, autonomous racing</tspan></text>
+<text x="390" y="320"><tspan>- Contact</tspan><tspan class="muted"> —————————————————————————————————————————————————</tspan></text>
+<text x="390" y="340"><tspan class="muted">. </tspan><tspan class="key">Website</tspan><tspan>:</tspan><tspan class="muted"> ................................ </tspan><tspan class="value">sergiopeterson.dev</tspan></text>
+<text x="390" y="360"><tspan class="muted">. </tspan><tspan class="key">Email</tspan><tspan>:</tspan><tspan class="muted"> ........................ </tspan><tspan class="value">sergiopeterson.dev@gmail.com</tspan></text>
+<text x="390" y="380"><tspan class="muted">. </tspan><tspan class="key">LinkedIn</tspan><tspan>:</tspan><tspan class="muted"> ................ </tspan><tspan class="value">linkedin.com/in/sergio-w-peterson</tspan></text>
+<text x="390" y="400"><tspan class="muted">. </tspan><tspan class="key">Location</tspan><tspan>:</tspan><tspan class="muted"> ................................ </tspan><tspan class="value">San Francisco, CA</tspan></text>
+<text x="390" y="420"><tspan class="muted">. </tspan><tspan class="key">GitHub</tspan><tspan>:</tspan><tspan class="muted"> .......................... </tspan><tspan class="value">github.com/SergioPeterson</tspan></text>
+<text x="390" y="450"><tspan>- GitHub Stats</tspan><tspan class="muted"> ————————————————————————————————————————————</tspan></text>
+<text x="390" y="470"><tspan class="muted">. </tspan><tspan class="key">Repos</tspan><tspan>: </tspan><tspan class="muted">.... </tspan><tspan class="value">35</tspan><tspan> {</tspan><tspan class="key">Contributed</tspan><tspan>: </tspan><tspan class="value">2</tspan><tspan>} | </tspan><tspan class="key">Stars</tspan><tspan>: </tspan><tspan class="muted">.... </tspan><tspan class="value">3</tspan></text>
+<text x="390" y="490"><tspan class="muted">. </tspan><tspan class="key">Commits</tspan><tspan>: </tspan><tspan class="muted">........ </tspan><tspan class="value">238</tspan><tspan> | </tspan><tspan class="key">Followers</tspan><tspan>: </tspan><tspan class="muted">........ </tspan><tspan class="value">5</tspan></text>
+<text x="390" y="510"><tspan class="muted">. </tspan><tspan class="key">Lines of Code on GitHub</tspan><tspan>: </tspan><tspan class="value">348,964</tspan><tspan> ( </tspan><tspan class="add">459,999</tspan><tspan class="add">++</tspan><tspan>, </tspan><tspan class="del">111,035</tspan><tspan class="del">--</tspan><tspan> )</tspan></text>
+</g>
 </svg>

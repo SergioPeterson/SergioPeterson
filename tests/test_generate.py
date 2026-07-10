@@ -128,34 +128,55 @@ class RenderingTests(unittest.TestCase):
     def test_both_themes_include_complete_profile_and_stats(self):
         stats = generate.ProfileStats(1, 2, 3, 4, 5, 6, 7)
         required = (
+            "sergio@peterson",
             "Sergio W. Peterson",
-            "Founding Engineer",
-            "Mars Accounting / Minerva Intelligence",
-            "AI &amp; Robotics Engineer",
+            "OS",
             "Uptime",
             "24 years, 0 months, 0 days",
+            "Host",
+            "Mars Accounting / Minerva Intelligence",
+            "Kernel",
+            "Founding Engineer",
+            "IDE",
+            "Cursor, VS Code, Jupyter",
+            "Focus",
+            "VLM systems, evaluation infrastructure",
+            "Languages.Programming",
             "Python",
             "PyTorch",
             "TypeScript",
             "React",
             "ROS",
-            "Docker",
-            "AWS",
+            "FastAPI",
+            "Languages.Platforms",
+            "Docker, AWS, Linux",
+            "Languages.Computer",
+            "HTML, CSS, JSON, YAML, LaTeX",
+            "Languages.Real",
+            "English",
+            "Hobbies.Software",
             "Robot learning",
-            "VLM systems",
-            "Evaluation infrastructure",
+            "Agent systems",
+            "Hobbies.Hardware",
+            "Robotics, autonomous racing",
+            "- Contact",
             "sergiopeterson.dev",
             "linkedin.com/in/sergio-w-peterson",
             "sergiopeterson.dev@gmail.com",
-            "Owned Repos",
-            "Contributed Repos",
+            "San Francisco, CA",
+            "- GitHub Stats",
+            "Repos",
+            "Contributed",
             "Stars",
-            "Commits",
             "Followers",
-            "Net Lines",
-            "Additions (++)",
-            "Deletions (--)",
-            "Public default-branch data",
+            "Commits",
+            "Lines of Code on GitHub",
+            "++",
+            "--",
+            'class="key"',
+            'class="value"',
+            'class="add"',
+            'class="del"',
         )
 
         for theme in ("dark", "light"):
@@ -166,10 +187,28 @@ class RenderingTests(unittest.TestCase):
                     stats,
                     today=dt.date(2026, 1, 10),
                 )
-                ET.fromstring(svg)
+                root = ET.fromstring(svg)
                 self.assertIn("white-space:pre", svg)
+                self.assertIn('width="985px"', svg)
+                self.assertIn('height="530px"', svg)
+                self.assertIn('font-size="15px"', svg)
+                self.assertIn('xml:space="preserve"', svg)
+                self.assertIn("\u00a0", svg)
+                self.assertNotIn("$ whoami", svg)
+                self.assertNotIn("<circle", svg)
                 for text in required:
                     self.assertIn(text, svg)
+
+                namespace = "{http://www.w3.org/2000/svg}"
+                for text_element in root.iter(f"{namespace}text"):
+                    if text_element.get("x") == "390":
+                        rendered_text = "".join(text_element.itertext())
+                        self.assertLessEqual(len(rendered_text), 64)
+
+    def test_portrait_stays_inside_left_column(self):
+        lines = Path("portrait.txt").read_text(encoding="utf-8").splitlines()
+        self.assertTrue(lines)
+        self.assertLessEqual(max(map(len, lines)), 39)
 
     def test_rejects_unknown_theme(self):
         with self.assertRaises(ValueError):
